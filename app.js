@@ -61,13 +61,13 @@ function start() {
   for (var i = 0; i < 8; i++) {
     var word = english_words[i];
     var element = $("<div></div>").addClass("word").text(word);
-    $("#words").append(element);
+    $("#words-eng").append(element);
   }
   // Создаем восемь элементов для русских слов и добавляем их в контейнер
   for (var i = 0; i < 8; i++) {
     var word = russian_words[i];
     var element = $("<div></div>").addClass("word").text(word);
-    $("#words").append(element);
+    $("#words-gr").append(element);
   }
   // Обнуляем счет
   score = 0;
