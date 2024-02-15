@@ -37,7 +37,8 @@ function random(min, max) {
 // Создаем функцию для запуска игры
 function start() {
   // Очищаем контейнер для слов
-  $("#words").empty();
+  $("#english").empty();
+  $("#greek").empty();
   // Генерируем восемь случайных слов на английском языке
   var english_words = [];
   for (var i = 0; i < 8; i++) {
@@ -61,13 +62,13 @@ function start() {
   for (var i = 0; i < 8; i++) {
     var word = english_words[i];
     var element = $("<div></div>").addClass("word").text(word);
-    $("#words-eng").append(element);
+    $("#english").append(element);
   }
   // Создаем восемь элементов для русских слов и добавляем их в контейнер
   for (var i = 0; i < 8; i++) {
     var word = russian_words[i];
     var element = $("<div></div>").addClass("word").text(word);
-    $("#words-gr").append(element);
+    $("#greek").append(element);
   }
   // Обнуляем счет
   score = 0;
