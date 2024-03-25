@@ -37,6 +37,10 @@ var total_words = 0; // Добавляем переменную для обще�
 function start() {
   $("#english").empty();
   $("#greek").empty();
+
+  // Скрываем элемент для конца игры
+  $("#game-over").hide();
+  
   // Генерируем новые слова, если массивы пусты
   if (english_words.length === 0) {
     generateWords();
@@ -70,7 +74,7 @@ function start() {
       $("#game-over").show();
 
       // Выводим общий счет игрока
-      $("#total-score").text("Total Score: " + total_words);
+      $("#game-over").text("Total Score: " + total_words);
     }
   }, 1000);
 }
