@@ -46,11 +46,8 @@ function start() {
     generateWords();
   }
 
-
-
   // Устанавливаем время
   var time = 60;
-
 
   var timer = setInterval(function () {
     time--;
@@ -58,8 +55,9 @@ function start() {
     $("#time").text("Time: " + time);
 
   // Проверяем, остались ли на странице контейнеры с классом "word"
-      var wordContainers = $(".word");
+    var wordContainers = $(".word");
     $("#score").text("left: " + wordContainers.length);
+    
   if (wordContainers.length === 0) {
     // Если контейнеров нет, генерируем новые слова
     generateWords();
