@@ -160,7 +160,6 @@ function generateWords() {
     var element = $("<div></div>").addClass("word").text(word);
     $("#greek").append(element);
   }
-  
 }
 
 
