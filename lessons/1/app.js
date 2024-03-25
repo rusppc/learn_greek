@@ -58,6 +58,7 @@ function start() {
     $("#time").text("Time: " + time);
 
   // Проверяем, остались ли на странице контейнеры с классом "word"
+    $("#score").text("left: " + wordContainers.length);
   if (wordContainers.length === 0) {
     // Если контейнеров нет, генерируем новые слова
     generateWords();
