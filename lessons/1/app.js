@@ -123,10 +123,11 @@ function on_word_click(event) {
   }
 }
 
-
-
-
 function generateWords() {
+
+  // Перезапускаем массив из ключей словаря 
+  var keys = Object.keys(dictionary);
+  
   // Генерируем новые слова
   english_words = [];
   russian_words = [];
