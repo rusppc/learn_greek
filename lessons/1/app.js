@@ -112,6 +112,15 @@ function on_word_click(event) {
         // Удаляем элементы для слов
         element.remove();
         $(".selected").remove();
+
+  // Проверяем, остались ли на странице контейнеры с классом "word"
+  var wordContainers = $(".word");
+
+  if (wordContainers.length === 0) {
+    // Если контейнеров нет, генерируем новые слова
+    generateWords();
+  }
+        
       } else {
         // Снимаем выделение с элементов
         element.removeClass("selected");
