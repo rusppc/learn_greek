@@ -46,19 +46,7 @@ function start() {
     generateWords();
   }
 
-  // Отображаем английские слова
-  for (var i = 0; i < 8; i++) {
-    var word = english_words[i];
-    var element = $("<div></div>").addClass("word").text(word);
-    $("#english").append(element);
-  }
 
-  // Отображаем русские слова
-  for (var i = 0; i < 8; i++) {
-    var word = russian_words[i];
-    var element = $("<div></div>").addClass("word").text(word);
-    $("#greek").append(element);
-  }
 
   // Устанавливаем время
   var time = 60;
@@ -158,6 +146,21 @@ function generateWords() {
   russian_words.sort(function () {
     return 0.5 - Math.random();
   });
+
+  // Отображаем английские слова
+  for (var i = 0; i < 8; i++) {
+    var word = english_words[i];
+    var element = $("<div></div>").addClass("word").text(word);
+    $("#english").append(element);
+  }
+
+  // Отображаем русские слова
+  for (var i = 0; i < 8; i++) {
+    var word = russian_words[i];
+    var element = $("<div></div>").addClass("word").text(word);
+    $("#greek").append(element);
+  }
+  
 }
 
 
