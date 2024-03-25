@@ -30,67 +30,47 @@ function random(min, max) {
 }
 
 // Создаем функцию для запуска игры
+var english_words = [];
+var russian_words = [];
+var total_words = 0; // Добавляем переменную для общего счета слов
+
 function start() {
-  // Очищаем контейнер для слов
   $("#english").empty();
   $("#greek").empty();
-  // Генерируем восемь случайных слов на английском языке
-  var english_words = [];
-  for (var i = 0; i < 8; i++) {
-    var index = random(0, keys.length - 1);
-    var word = keys[index];
-    english_words.push(word);
-    // Удаляем слово из массива ключей, чтобы не повторяться
-    keys.splice(index, 1);
+  // Генерируем новые слова, если массивы пусты
+  if (english_words.length === 0) {
+    generateWords();
   }
-  // Генерируем восемь соответствующих слов на русском языке
-  var russian_words = [];
-  for (var i = 0; i < 8; i++) {
-    var word = dictionary[english_words[i]];
-    russian_words.push(word);
-  }
-  // Перемешиваем русские слова
-  russian_words.sort(function() {
-    return 0.5 - Math.random();
-  });
-  // Создаем восемь элементов для английских слов и добавляем их в контейнер
+
+  // Отображаем английские слова
   for (var i = 0; i < 8; i++) {
     var word = english_words[i];
     var element = $("<div></div>").addClass("word").text(word);
     $("#english").append(element);
   }
-  // Создаем восемь элементов для русских слов и добавляем их в контейнер
+
+  // Отображаем русские слова
   for (var i = 0; i < 8; i++) {
     var word = russian_words[i];
     var element = $("<div></div>").addClass("word").text(word);
     $("#greek").append(element);
   }
-  // Обнуляем счет
-  score = 0;
-  // Обновляем текст элемента для счета
-  $("#score").text("Score: " + score);
+
   // Устанавливаем время
-  time = 60;
-  // Обновляем текст элемента для времени
-  $("#time").text("Time: " + time);
-  // Устанавливаем статус игры
-  game_over = false;
-  // Скрываем элемент для конца игры
-  $("#game-over").hide();
-  // Запускаем таймер
-  var timer = setInterval(function() {
-    // Уменьшаем время на одну секунду
+  var time = 60;
+
+  var timer = setInterval(function () {
     time--;
-    // Обновляем текст элемента для времени
+
     $("#time").text("Time: " + time);
-    // Если время истекло
-    if (time == 0) {
-      // Останавливаем таймер
+
+    if (time === 0) {
       clearInterval(timer);
-      // Устанавливаем статус игры
       game_over = true;
-      // Показываем элемент для конца игры
       $("#game-over").show();
+
+      // Выводим общий счет игрока
+      $("#total-score").text("Total Score: " + total_words);
     }
   }, 1000);
 }
@@ -143,6 +123,34 @@ function on_word_click(event) {
     }
   }
 }
+
+
+
+
+function generateWords() {
+  // Генерируем новые слова
+  english_words = [];
+  russian_words = [];
+
+  for (var i = 0; i < 8; i++) {
+    var index = random(0, keys.length - 1);
+    var word = keys[index];
+    english_words.push(word);
+    keys.splice(index, 1);
+    // Добавляем слово к общему счету
+    total_words++;
+  }
+  for (var i = 0; i < 8; i++) {
+    var word = dictionary[english_words[i]];
+    russian_words.push(word);
+  }
+  russian_words.sort(function () {
+    return 0.5 - Math.random();
+  });
+}
+
+
+
 
 // При загрузке документа
 $(document).ready(function() {
