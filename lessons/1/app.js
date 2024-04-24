@@ -1,17 +1,14 @@
-// Создаем словарь с парами слов на английском и русском языках
-var dictionary = {
-"0" : "μηδέν",
-"1": "ένα",
-"2": "δύο",
-"3": "τρία",
-"4": "τέσσερα",
-"5": "πέντε",
-"6": "έξι",
-"7": "επτά",
-"8": "οκτώ",
-"9": "εννέα",
-"10": "δέκα"
-};
+// В скрипте на стороне клиента
+// Получение параметров URL
+var params = new URLSearchParams(window.location.search);
+var dictionaryParam = params.get('dictionary');
+
+// Десериализация JSON
+if (dictionaryParam) {
+  var dictionary = JSON.parse(decodeURIComponent(dictionaryParam));
+  // Теперь dictionary - это объект JavaScript, который можно использовать как словарь
+
+
 
 // Создаем массив из ключей словаря 
 var keys = Object.keys(dictionary);
