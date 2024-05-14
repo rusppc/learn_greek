@@ -261,7 +261,7 @@ function start() {
   }
 
   // Устанавливаем время
-  var time = 60;
+  var time = 999;
 
   var timer = setInterval(function () {
     time--;
