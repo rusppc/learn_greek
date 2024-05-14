@@ -6,15 +6,55 @@
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script src="app.js"></script>
   <link rel="stylesheet" href="style.css">
+<style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+    }
+
+    .container {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .top-container, .bottom-container {
+      height: 150px; /* Высота верхнего и нижнего контейнеров */
+    }
+
+    .central-container {
+      flex-grow: 1; /* Центральный контейнер занимает всю оставшуюся высоту */
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+    }
+
+    .inner-container {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      align-items: center;
+      width: 40%; /* Ширина вложенных контейнеров */
+    }
+
+    button {
+      padding: 5px 5px;
+      margin: 15px;
+      width: 100%; /* Кнопки занимают всю доступную ширину внутри вложенных контейнеров */
+      height: 10vh; /* Каждая кнопка занимает 10% высоты экрана */
+    }
+  </style>
 </head>
 <body>
-  <div id="header">
+  <div id="header" class="container top-container">
     <div id="score"></div>
     <div id="time"></div>
   </div>
-  <div id="words">
-    <div id="english"></div>
-    <div id="greek"></div>
+  <div id="words" class="container central-container">
+    <div id="english" class="inner-container"></div>
+    <div id="greek" class="inner-container"></div>
   </div>
 
   <div id="game-over">
