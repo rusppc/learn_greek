@@ -50,6 +50,19 @@
       box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.2);
       word-wrap: break-word;
     }
+
+      .reload-button {
+      padding: 5px 5px;
+      margin: 15px;
+      width: 80%; /* Кнопки занимают всю доступную ширину внутри вложенных контейнеров */
+      height: 10vh; /* Каждая кнопка занимает 10% высоты экрана */
+      align-content: center;
+      font-size: xxx-large;
+      border-radius: 20px;
+      box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.2);
+      word-wrap: break-word;
+    }
+  
   </style>
 </head>
 <body>
@@ -64,7 +77,8 @@
 
   <div id="game-over">
 <div id="game-over2">You Died!</div>
-<button onclick="window.location.reload();">Играть ещё раз</button>
+    <button onclick="window.location.reload();" class="reload-button">Играть ещё раз</button>
+    <button onclick="window.location.reload();" class="reload-button">Перейти к другим уровням</button>
 </div>
 </body>
 </html>
