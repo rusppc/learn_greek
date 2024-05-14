@@ -232,7 +232,7 @@ var keys = Object.keys(dictionary);
 
 // Создаем переменные для хранения счета, времени и статуса игры
 var score = 0;
-var time = 999;
+var time = 180;
 var game_over = false;
 
 // Создаем переменную для хранения выбранного слова
@@ -261,7 +261,7 @@ function start() {
   }
 
   // Устанавливаем время
-  var time = 999;
+  var time = 180;
 
   var timer = setInterval(function () {
     time--;
