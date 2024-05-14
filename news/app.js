@@ -147,14 +147,14 @@ function generateWords() {
   // Отображаем английские слова
   for (var i = 0; i < word_count; i++) {
     var word = english_words[i];
-    var element = $("<div></div>").addClass("word").text(word);
+    var element = $("<button></button>").addClass("word").text(word);
     $("#english").append(element);
   }
 
   // Отображаем русские слова
   for (var i = 0; i < word_count; i++) {
     var word = russian_words[i];
-    var element = $("<div></div>").addClass("word").text(word);
+    var element = $("<button></button>").addClass("word").text(word);
     $("#greek").append(element);
   }
 }
