@@ -127,7 +127,7 @@ function generateWords() {
   // Генерируем новые слова
   english_words = [];
   russian_words = [];
-  word_count = 4
+  word_count = 6
 
   for (var i = 0; i < word_count; i++) {
     var index = random(0, keys.length - 1);
