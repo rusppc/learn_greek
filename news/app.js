@@ -48,6 +48,7 @@ function start() {
 
   var timer = setInterval(function () {
     time--;
+    if (time < 0) {time = 0;}
     $("#time").text("Time: " + time);
 
   // Проверяем, остались ли на странице контейнеры с классом "word"
