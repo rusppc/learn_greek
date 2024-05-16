@@ -53,10 +53,7 @@ function start() {
   // Проверяем, остались ли на странице контейнеры с классом "word"
   var wordContainers = $(".word");
   if (wordContainers.length === 0) {
-    // Если контейнеров нет, генерируем новые слова
-    generateWords();
-  }
-
+    // Если контейнеров нет и время 0, конец игры
     if (time === 0) {
       clearInterval(timer);
       game_over = true;
@@ -64,7 +61,13 @@ function start() {
 
       // Выводим общий счет игрока
       $("#game-over2").text("Total Score: " + score);
+    } else {
+    // Если контейнеров нет, генерируем новые слова
+    generateWords();
     }
+  }
+
+
   }, 1000);
 }
 
