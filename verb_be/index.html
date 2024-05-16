@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Глагол быть в греческом языке</title>
+<meta charset="UTF-8">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="app.js"></script>
+  <link rel="stylesheet" href="style.css">
+<style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+    }
+
+    .container {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .top-container, .bottom-container {
+      height: 150px; /* Высота верхнего и нижнего контейнеров */
+    }
+
+    .central-container {
+      flex-grow: 1; /* Центральный контейнер занимает всю оставшуюся высоту */
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+    }
+
+    .inner-container {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      align-items: center;
+      width: 40%; /* Ширина вложенных контейнеров */
+    }
+
+    .word {
+      padding: 5px 5px;
+      margin: 15px;
+      width: 100%; /* Кнопки занимают всю доступную ширину внутри вложенных контейнеров */
+      height: 10vh; /* Каждая кнопка занимает 10% высоты экрана */
+      align-content: center;
+      font-size: xxx-large;
+      border-radius: 20px;
+      box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.2);
+      word-wrap: break-word;
+    }
+
+      .reload-button {
+      padding: 5px 5px;
+      margin: 15px;
+      width: 80%; /* Кнопки занимают всю доступную ширину внутри вложенных контейнеров */
+      height: 10vh; /* Каждая кнопка занимает 10% высоты экрана */
+      align-content: center;
+      font-size: xxx-large;
+      border-radius: 20px;
+      box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.2);
+      word-wrap: break-word;
+    }
+  
+  </style>
+</head>
+<body>
+  <div id="header" class="container top-container">
+    <div id="score" class="inner-container"></div>
+    <div id="time" class="inner-container"></div>
+  </div>
+  <div id="words" class="container central-container">
+    <div id="english" class="inner-container"></div>
+    <div id="greek" class="inner-container"></div>
+  </div>
+
+  <div id="game-over">
+<div id="game-over2">You Died!</div>
+    <button onclick="window.location.reload();" class="reload-button">Играть ещё раз</button>
+    <button onclick="window.location.href = 'https://t.me/cyprus_news_learn_greek';" class="reload-button">Перейти к другим уровням</button>
+</div>
+</body>
+</html>
