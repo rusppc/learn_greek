@@ -52,7 +52,7 @@ function start() {
 
   // Проверяем, остались ли на странице контейнеры с классом "word"
   var wordContainers = $(".word");
-  if (wordContainers.length === 0) {
+  if (wordContainers.length <= 0) {
     // Если контейнеров нет и время 0, конец игры
     if (time === 0) {
       clearInterval(timer);
